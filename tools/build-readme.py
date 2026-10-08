@@ -4,8 +4,6 @@
 Hard-coded numbers rot the moment someone adds a skill and lie until they notice.
 """
 import os, re, sys
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import asciiart
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SK = os.path.join(ROOT, "skills")
@@ -44,8 +42,7 @@ README = (tmpl.replace("{{skills}}", f"{len(slugs)}")
               .replace("{{areas}}", str(len(areas)))
               .replace("{{verdict}}", verdict)
               .replace("{{arealist}}", AREAS)
-              .replace("{{art_wordmark}}", asciiart.wordmark())
-              .replace("{{art_machine}}", asciiart.machine_art()))
+              )
 
 open(os.path.join(ROOT, "README.md"), "w", encoding="utf-8").write(README)
 print(f"  README.md regenerated: {len(slugs)} skills, {words:,} words, {len(areas)} areas, {verdict}")

@@ -273,17 +273,22 @@ def bar():
 
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets")
 os.makedirs(OUT, exist_ok=True)
-made = {}
-for name, fn in (("banner", banner), ("money", money), ("terminal", terminal), ("bar", bar)):
-    print(f"  building {name} ...", flush=True)
-    frames = fn()[::2] if name != "bar" else fn()[::2]
-    path = os.path.join(OUT, name + ".gif")
-    size = write_gif(path, frames, BG, delay=7 if name != "bar" else 14)
-    seen = check_gif(path, frames[0].w, frames[0].h, len(frames))
-    made[name] = (seen, size)
+def build_all():
+    made = {}
+    for name, fn in (("banner", banner), ("money", money), ("terminal", terminal), ("bar", bar)):
+        print(f"  building {name} ...", flush=True)
+        frames = fn()[::2] if name != "bar" else fn()[::2]
+        path = os.path.join(OUT, name + ".gif")
+        size = write_gif(path, frames, BG, delay=7 if name != "bar" else 14)
+        seen = check_gif(path, frames[0].w, frames[0].h, len(frames))
+        made[name] = (seen, size)
 
-total = 0
-for k, (nf, sz) in made.items():
-    total += sz
-    print(f"  assets/{k}.gif  {nf} frames  {sz // 1024} KB  structure+payload verified")
-print(f"  total {total // 1024} KB across three animations")
+    total = 0
+    for k, (nf, sz) in made.items():
+        total += sz
+        print(f"  assets/{k}.gif  {nf} frames  {sz // 1024} KB  structure+payload verified")
+    print(f"  total {total // 1024} KB across three animations")
+
+
+if __name__ == "__main__":
+    build_all()

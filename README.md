@@ -12,41 +12,11 @@ the crypto rails underneath.**
 [![license](https://img.shields.io/github/license/0xklen/money-machine?style=flat-square&labelColor=000000&color=000000)](LICENSE)
 [![skills](https://img.shields.io/badge/skills-1040-000000?style=flat-square&labelColor=000000)](skills)
 
-<div align="center">
-<pre>
-█   █  ███  █   █ █████ █   █            
-██ ██ █   █ ██  █ █     █   █            
-█ █ █ █   █ █ █ █ ████   ███             
-█   █ █   █ █  ██ █       █              
-█   █  ███  █   █ █████   █              
-
-█   █  ███   ████ █   █ █████ █   █ █████
-██ ██ █   █ █     █   █   █   ██  █ █    
-█ █ █ █████ █     █████   █   █ █ █ ████ 
-█   █ █   █ █     █   █   █   █  ██ █    
-█   █ █   █  ████ █   █ █████ █   █ █████
-
-          ───────── ◆ ─────────          
-</pre>
-</div>
+<img src="assets/banner.png" width="440" alt="MONEY MACHINE in pixel letters">
+<img src="assets/divider.png" width="480" alt="">
 
 <div align="center">
-<pre>
-      .-----------.    
-    /      $      \    
-   |       $       |   
-    \      $      /    
-      '-----------'    
-              |        
-              v        
-                       
-+---------------------+
-|   [   C O I N   ]   |
-|                     |
-|   $  $  $  $  $  $  |
-|   $  $  $  $  $  $  |
-+---------------------+
-</pre>
+<img src="assets/machine.png" width="400" alt="a coin going into the machine, coins stacking up as they come out">
 </div>
 
 1040 skills · 444,073 words · 52 areas · 1040/1040 valid, 0 failing, 0 duplicate
@@ -168,11 +138,7 @@ MIT — see [LICENSE](LICENSE). Use them, fork them, ship them in your own agent
 
 <div align="center">
 
-```
-   ██████  ██   ██  ██████  ████████  ██   ██     ██   ██  ███████  ██    ██
-   ██      ██   ██  ██         ██    ██   ██     ██   ██  ██      ██    ██
-   █████   ██   ██  █████      ██    ██   ██     ██   ██  ███████  ██    ██
-```
+<img src="assets/divider.png" width="480" alt="">
 
 *every skill in here was paid for by a mistake*
 
