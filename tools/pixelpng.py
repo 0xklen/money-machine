@@ -8,7 +8,7 @@ directly (colour type 2, filter 0) and decoded back before anyone trusts it.
 import os, re, struct, sys, zlib
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from pixelart import Grid, word
+from pixelart import FONT, Grid, word
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
@@ -64,11 +64,18 @@ def counts():
     return n, areas
 
 
+def require(text):
+    """Every character must have a glyph. A missing one renders blank and looks like a typo."""
+    missing = sorted({c for c in text.upper() if c not in FONT})
+    assert not missing, f"no glyph for {missing} in {text!r} — it would render as a blank"
+
+
 def tw(text, scale, gap=1):
     return len(text) * (5 + gap) * scale
 
 
 def centre(g, y, text, colour, scale, gap=1):
+    require(text)
     word(g, max(0, (g.w - tw(text, scale, gap)) // 2), y, text, colour, scale, gap)
 
 
