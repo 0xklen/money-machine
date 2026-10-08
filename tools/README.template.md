@@ -12,26 +12,17 @@ the crypto rails underneath.**
 [![license](https://img.shields.io/github/license/0xklen/money-machine?style=flat-square&labelColor=000000&color=000000)](LICENSE)
 [![skills](https://img.shields.io/badge/skills-{{skills}}-000000?style=flat-square&labelColor=000000)](skills)
 
-```
-                             █   █  ███  █   █ █████ █   █                              
-                             ██ ██ █   █ ██  █ ███    ███                               
-                             █   █  ███  █   █ █████   █                                
+<div align="center">
+<pre>
+{{art_wordmark}}
+</pre>
+</div>
 
-                       █   █  ███   ████ █   █ █████ █   █ █████                        
-                       ██ ██ █   █ █     █████   █   ██  █ ███                          
-                       █   █ █   █  ████ █   █ █████ █   █ █████                        
-```
-
-```
-              .---------.
-             /    $      \          +-----------------------+
-            |      $      |  --->   |   [    C O I N    ]  |
-             \    $      /          |                       |
-              '---------'           |   $   $   $   $   $   |
-                                    |   $   $   $   $   $   |
-                                    +-----------------------+
-     one coin goes in  ................  a machine, and a lot of coins come out
-```
+<div align="center">
+<pre>
+{{art_machine}}
+</pre>
+</div>
 
 {{skills}} skills · {{words}} words · {{areas}} areas · {{verdict}}
 

@@ -12,26 +12,42 @@ the crypto rails underneath.**
 [![license](https://img.shields.io/github/license/0xklen/money-machine?style=flat-square&labelColor=000000&color=000000)](LICENSE)
 [![skills](https://img.shields.io/badge/skills-1040-000000?style=flat-square&labelColor=000000)](skills)
 
-```
-                             █   █  ███  █   █ █████ █   █                              
-                             ██ ██ █   █ ██  █ ███    ███                               
-                             █   █  ███  █   █ █████   █                                
+<div align="center">
+<pre>
+█   █  ███  █   █ █████ █   █            
+██ ██ █   █ ██  █ █     █   █            
+█ █ █ █   █ █ █ █ ████   ███             
+█   █ █   █ █  ██ █       █              
+█   █  ███  █   █ █████   █              
 
-                       █   █  ███   ████ █   █ █████ █   █ █████                        
-                       ██ ██ █   █ █     █████   █   ██  █ ███                          
-                       █   █ █   █  ████ █   █ █████ █   █ █████                        
-```
+█   █  ███   ████ █   █ █████ █   █ █████
+██ ██ █   █ █     █   █   █   ██  █ █    
+█ █ █ █████ █     █████   █   █ █ █ ████ 
+█   █ █   █ █     █   █   █   █  ██ █    
+█   █ █   █  ████ █   █ █████ █   █ █████
 
-```
-              .---------.
-             /    $      \          +-----------------------+
-            |      $      |  --->   |   [    C O I N    ]  |
-             \    $      /          |                       |
-              '---------'           |   $   $   $   $   $   |
-                                    |   $   $   $   $   $   |
-                                    +-----------------------+
-     one coin goes in  ................  a machine, and a lot of coins come out
-```
+          ───────── ◆ ─────────          
+</pre>
+</div>
+
+<div align="center">
+<pre>
+      .-----------.    
+    /      $      \    
+   |       $       |   
+    \      $      /    
+      '-----------'    
+              |        
+              v        
+                       
++---------------------+
+|   [   C O I N   ]   |
+|                     |
+|   $  $  $  $  $  $  |
+|   $  $  $  $  $  $  |
++---------------------+
+</pre>
+</div>
 
 1040 skills · 444,073 words · 52 areas · 1040/1040 valid, 0 failing, 0 duplicate
 
