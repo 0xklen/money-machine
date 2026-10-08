@@ -34,7 +34,7 @@ def sh(cmd):
 
 verdict = sh("python3 tools/validate.py 2>&1 | tail -1").strip() or "not run"
 
-AREAS = "\n".join(f"- `{c}` {d}" for c, d in area_names)
+AREAS = " · ".join(f"`{c}` {d}" for c, d in area_names)
 
 tmpl = open(os.path.join(ROOT, "tools", "README.template.md"), encoding="utf-8").read()
 README = (tmpl.replace("{{skills}}", f"{len(slugs)}")
