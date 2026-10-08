@@ -32,6 +32,8 @@ def sh(cmd):
     return subprocess.run(cmd, shell=True, cwd=ROOT, capture_output=True, text=True).stdout.strip()
 
 
+sh("python3 tools/pixelpng.py >/dev/null")   # art carries the same figures
+
 verdict = sh("python3 tools/validate.py 2>&1 | tail -1").strip() or "not run"
 
 AREAS = " · ".join(f"`{c}` {d}" for c, d in area_names)
