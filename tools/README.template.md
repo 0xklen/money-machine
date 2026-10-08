@@ -8,7 +8,7 @@ on one table.**
 Not tips. Not prompt tricks. Procedures with the commands, the thresholds, and the check that
 proves it worked.
 
-    1000 skills   ·   422,839 words   ·   50 areas   ·   1000/1000 valid, 0 failing, 0 duplicate
+    {{skills}} skills   ·   {{words}} words   ·   {{areas}} areas   ·   {{verdict}}
 
 ---
 
@@ -76,56 +76,7 @@ here depends on a particular runtime.
 
 ## What's on the table
 
-- `agent-01` Agent self-management
-- `agent-02` Agent honesty and evidence
-- `software-01` Correctness under change
-- `software-02` Running systems
-- `software-03` Delivery and supply chain
-- `crypto-01` Keys and signing
-- `crypto-02` Contract safety
-- `crypto-03` DeFi and markets
-- `crypto-04` On-chain interaction
-- `judgment` Research and evaluation
-- `agent-03` Memory and knowledge
-- `agent-04` Multi-agent orchestration
-- `agent-05` Tool and API integration
-- `agent-06` Failure containment
-- `agent-07` Communication
-- `sec-01` Security review
-- `sec-02` Privacy and data
-- `sec-03` Adversarial robustness
-- `data-01` Pipelines
-- `data-02` Analytics
-- `infra-01` Containers
-- `infra-02` Networking
-- `infra-03` Storage
-- `infra-04` IaC and environments
-- `perf-01` Web performance
-- `perf-02` Backend performance
-- `prod-01` Product and requirements
-- `prod-02` Design engineering
-- `crypto-05` Wallets and custody
-- `crypto-06` MEV and orderflow
-- `crypto-07` Rollups and L2 ops
-- `crypto-08` Stablecoins and payments
-- `crypto-09` NFT and on-chain art
-- `crypto-10` Governance and DAOs
-- `crypto-11` Data and indexers
-- `crypto-12` Compliance-aware work
-- `ai-01` Model selection and prompting
-- `ai-02` Evaluation and red-teaming
-- `ai-03` RAG and knowledge
-- `ai-04` Agents and tool use
-- `craft-01` Docs and writing
-- `craft-02` Code review
-- `craft-03` Debugging method
-- `craft-04` Incident command
-- `craft-05` Estimation and planning
-- `craft-06` Negotiation and scope
-- `craft-07` Teaching and onboarding
-- `craft-08` Automation design
-- `craft-09` Time and calendar
-- `craft-10` Money and units
+{{arealist}}
 
 ## What this is not
 
