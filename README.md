@@ -10,7 +10,7 @@ the crypto rails underneath. Every one earned from something that went wrong fir
 Not tips. Not prompt tricks. Procedures with the commands, the thresholds, and the check that
 proves it worked.
 
-    1000 skills   ·   422,839 words   ·   50 areas   ·   1000/1000 valid, 0 failing, 0 duplicate
+    1040 skills   ·   444,073 words   ·   52 areas   ·   1040/1040 valid, 0 failing, 0 duplicate
 
 ---
 
@@ -130,6 +130,8 @@ here depends on a particular runtime.
 - `craft-08` Automation design
 - `craft-09` Time and calendar
 - `craft-10` Money and units
+- `money-01` Pricing and unit economics
+- `money-02` Revenue operations
 
 ## What this is not
 

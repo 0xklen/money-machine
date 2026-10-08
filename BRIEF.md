@@ -140,3 +140,12 @@ dispatched in four further waves of ten.
                timezone-aware logs, batch windows, retry timing.
 50 craft-10    Money and units: currency units, rounding, fee arithmetic, basis points, precision
                loss, aggregation vs multiplication, reconciliation, audit trails, never float money.
+51 money-01    Pricing and unit economics: costing from inputs, gross margin and markup, tier
+               ladders, willingness to pay, elasticity, feature gating, discount margin cost,
+               freemium conversion, usage vs seat pricing, price rises, competitor teardown,
+               land and expand, CAC, LTV and payback, contribution margin, break-even units.
+52 money-02    Revenue operations: dunning, failed-payment recovery, refund and chargeback
+               thresholds, proration, trial conversion, churn and save plays, expansion revenue,
+               revenue recognition, processor reconciliation, gateway fees and net settlement,
+               digital sales tax, affiliate payouts, ad and sponsorship economics, marketplace
+               take rates, funnel maths, attribution, cohort curves, MRR movement, forecasting.
