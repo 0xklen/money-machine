@@ -13,8 +13,8 @@ from pixelart import FONT, Grid, word
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
 
-# 0 paper, 1 ink, 2 mid grey, 3 pale grey (graph paper), 4 deep ink
-BW = [(255, 255, 255), (0, 0, 0), (128, 128, 128), (225, 225, 225), (60, 60, 60)]
+# exactly two colours: paper and ink. Anything that used grey is dithered instead.
+BW = [(255, 255, 255), (0, 0, 0)]
 
 
 def write_png(path, g, palette=BW):
@@ -79,12 +79,17 @@ def centre(g, y, text, colour, scale, gap=1):
     word(g, max(0, (g.w - tw(text, scale, gap)) // 2), y, text, colour, scale, gap)
 
 
+def checker(g, x, y, w, h, colour=1):
+    """50% dither. With only black and white available, this is what a lighter tone is."""
+    for j in range(h):
+        for i in range(w):
+            if (i + j) % 2 == 0:
+                g.px(x + i, y + j, colour)
+
+
 def paper(w, h):
     """White sheet, faint graph-paper dots, black rule at the top."""
     g = Grid(w, h, 0)
-    for x in range(6, w - 6, 12):
-        for y in range(6, h - 6, 12):
-            g.px(x, y, 3)
     g.frame(2, 2, w - 4, h - 4, 1)
     return g
 
@@ -94,9 +99,10 @@ def banner():
     g = paper(500, 168)
     centre(g, 18, "MONEY", 1, 4)
     centre(g, 62, "MACHINE", 1, 4)
-    g.rect(120, 116, 260, 3, 1)
-    centre(g, 128, f"{n} SKILLS", 1, 2)
-    centre(g, 148, f"{areas} AREAS", 2, 2)
+    g.rect(120, 112, 260, 3, 1)
+    centre(g, 124, f"{n} SKILLS", 1, 2)
+    checker(g, 150, 146, 200, 6)
+    centre(g, 156, f"{areas} AREAS", 1, 2)
     return g
 
 
@@ -109,8 +115,8 @@ def machine():
     g.rect(76, 66, 92, 12, 1)                     # slot: solid ink
     g.rect(64, 122, 116, 22, 0)                   # tray: outlined
     g.frame(64, 122, 116, 22, 1)
-    for y in (10, 20):                            # motion dashes
-        g.rect(116, y, 6, 6, 2)
+    for y in (10, 20):                            # motion dashes, dithered
+        checker(g, 116, y, 8, 8)
     g.rect(104, 32, 30, 22, 1)                    # the coin
     g.rect(110, 38, 18, 10, 0)
     g.rect(220, 94, 36, 10, 1)                    # arrow
@@ -119,8 +125,12 @@ def machine():
     for i in range(6):                            # coins stacking up
         x = 282 + (i % 2) * 18
         y = 140 - i * 14
-        g.rect(x, y, 58, 10, 1 if i % 2 else 4)
-        g.rect(x + 4, y + 3, 50, 2, 0)
+        if i % 2:
+            checker(g, x, y, 58, 10)
+            checker(g, x + 4, y + 3, 50, 2, 0)
+        else:
+            g.rect(x, y, 58, 10, 1)
+            g.rect(x + 4, y + 3, 50, 2, 0)
     return g
 
 
