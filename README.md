@@ -13,7 +13,7 @@
 Not tips. Not prompt tricks. Procedures with the commands, the thresholds, and the check that
 proves it worked.
 
-    400 skills   ·   160,989 words   ·   50 areas   ·   400/400 valid, 0 failing, 0 duplicate
+    1000 skills   ·   422,839 words   ·   50 areas   ·   1000/1000 valid, 0 failing, 0 duplicate
 
 ---
 
