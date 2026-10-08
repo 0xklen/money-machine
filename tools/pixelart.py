@@ -35,6 +35,13 @@ FONT = {
     "O": ["01110", "10001", "10001", "10001", "10001", "10001", "01110"],
     "N": ["10001", "11001", "11001", "10101", "10011", "10011", "10001"],
     "-": ["00000", "00000", "00000", "11111", "00000", "00000", "00000"],
+    "M": ["10001", "11011", "10101", "10101", "10001", "10001", "10001"],
+    "E": ["11111", "10000", "10000", "11110", "10000", "10000", "11111"],
+    "Y": ["10001", "10001", "01010", "00100", "00100", "00100", "00100"],
+    "C": ["01111", "10000", "10000", "10000", "10000", "10000", "01111"],
+    "I": ["11111", "00100", "00100", "00100", "00100", "00100", "11111"],
+    "L": ["10000", "10000", "10000", "10000", "10000", "10000", "11111"],
+    "V": ["10001", "10001", "10001", "10001", "10001", "01010", "00100"],
     " ": ["00000"] * 7,
 }
 
@@ -153,26 +160,65 @@ BG = [
 
 # ---------------------------------------------------------------- scenes
 def banner():
-    """The wordmark typing itself in, one letter at a time, with a blinking cursor."""
+    """MONEY MACHINE, typed out one letter at a time, over a coin that keeps its edge."""
     frames = []
-    text = "HARD-WON"
-    for step in range(len(text) + 1):
+    l1, l2 = "MONEY", "MACHINE"
+    total = len(l1) + len(l2)
+    for step in range(total + 1):
         for blink in range(2):
-            g = Grid(256, 72, 1)
-            for x in range(0, 320, 8):
+            g = Grid(256, 96, 1)
+            for x in range(0, 256, 8):
                 for y in range(0, 96, 8):
                     if (x // 8 + y // 8) % 2 == 0:
                         g.rect(x, y, 1, 1, 2)
-            g.frame(4, 4, 248, 64, 3)
+            g.frame(4, 4, 248, 88, 3)
             g.rect(4, 4, 248, 2, 4)
-            word(g, 18, 22, text[:step], 4, scale=3, gap=1)
-            if step < len(text) and blink == 0:
-                g.rect(18 + step * 18, 22, 3, 21, 12)
-            g.rect(18, 52, 220, 1, 6)
-            for i in range(28):
-                if i * 8 < 220 * (step / len(text)):
-                    g.rect(18 + i * 8, 56, 5, 3, 4 if i % 3 else 8)
+            n1 = min(step, len(l1))
+            word(g, 66, 18, l1[:n1], 4, scale=3, gap=1)
+            if step > len(l1):
+                word(g, 82, 46, l2[:step - len(l1)], 8, scale=3, gap=1)
+            if step < total and blink == 0:
+                if step < len(l1):
+                    g.rect(66 + step * 18, 18, 3, 21, 12)
+                else:
+                    g.rect(82 + (step - len(l1)) * 18, 46, 3, 21, 12)
+            g.rect(20, 76, 216, 1, 6)
+            for i in range(27):
+                if i * 8 < 216 * (step / total):
+                    g.rect(20 + i * 8, 80, 5, 3, 4 if i % 3 else 8)
             frames.append(g)
+    return frames
+
+
+def money():
+    """A coin drops in the slot, coins come out, and the stack grows every cycle."""
+    frames = []
+    for step in range(10):
+        g = Grid(256, 96, 1)
+        for x in range(0, 256, 8):
+            for y in range(0, 96, 8):
+                if (x // 8 + y // 8) % 2 == 0:
+                    g.rect(x, y, 1, 1, 2)
+        g.frame(4, 4, 248, 88, 3)
+        g.rect(18, 24, 92, 56, 3)
+        g.rect(18, 24, 92, 2, 4)
+        g.rect(48, 34, 32, 6, 1)
+        g.rect(42, 62, 44, 12, 2)
+        g.rect(24, 46, 30, 4, 6)
+        cy = 4 + step * 5 if step < 4 else 30
+        if step < 5:
+            g.rect(62, cy, 8, 8, 8)
+            g.rect(64, cy + 2, 4, 4, 1)
+        for i in range(min(step, 6)):
+            y = 74 - i * 8
+            g.rect(132 + (i % 2) * 18, y, 20, 6, 8)
+            g.rect(132 + (i % 2) * 18, y, 20, 1, 12)
+        g.rect(168, 30, 2, 34, 4)
+        g.rect(164, 32, 10, 4, 4)
+        word(g, 148, 46, "MONEY", 4, 1)
+        frames.append(g)
+    for _ in range(3):
+        frames.append(frames[-1])
     return frames
 
 
@@ -180,15 +226,15 @@ def terminal():
     """A terminal running the validator: lines appear, one turns red, the cursor blinks."""
     lines = [
         ("$ python3 tools/validate.py", 4),
-        ("scanning 1000 skills ...", 10),
+        ("scanning every skill ...", 10),
         ("checking frontmatter ...", 10),
         ("checking sections and word floors ...", 10),
-        ("comparing 1000 bodies for overlap ...", 10),
+        ("comparing every body for overlap ...", 10),
         ("FAIL  test-that-passes-on-an-empty-list", 9),
-        ("         all() over [] is True", 9),
-        ("fixed: assert the list is non-empty", 8),
+        ("         all() over empty is true", 9),
+        ("fixed: assert the list is not empty", 8),
         ("", 0),
-        ("1000/1000 valid, 0 failing, 0 duplicate", 4),
+        ("all valid, none failing, no duplicates", 4),
         ("$ _", 12),
     ]
     frames = []
@@ -218,7 +264,7 @@ def bar():
         for i in range(56):
             if i < 56 * step / 10:
                 g.rect(5 + i * 3, 6, 2, 10, 4 if i < 50 else 8)
-        word(g, 196, 6, "1000/1000", 4, 1)
+        word(g, 196, 6, "ALL VALID", 4, 1)
         frames.append(g)
     for _ in range(3):
         frames.append(frames[-1])
@@ -228,7 +274,7 @@ def bar():
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets")
 os.makedirs(OUT, exist_ok=True)
 made = {}
-for name, fn in (("banner", banner), ("terminal", terminal), ("bar", bar)):
+for name, fn in (("banner", banner), ("money", money), ("terminal", terminal), ("bar", bar)):
     print(f"  building {name} ...", flush=True)
     frames = fn()[::2] if name != "bar" else fn()[::2]
     path = os.path.join(OUT, name + ".gif")

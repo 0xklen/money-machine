@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="money machine: a coin machine that turns one coin into many">
+  <rect width="512" height="512" fill="#ffffff"/>
+  <!-- the machine -->
+  <rect x="72" y="132" width="300" height="256" rx="26" fill="#000000"/>
+  <rect x="110" y="176" width="124" height="16" rx="8" fill="#ffffff"/>
+  <rect x="108" y="330" width="228" height="34" rx="10" fill="#ffffff"/>
+  <circle cx="330" cy="200" r="20" fill="#ffffff"/>
+  <circle cx="330" cy="200" r="8" fill="#000000"/>
+  <rect x="110" y="216" width="124" height="88" rx="10" fill="#ffffff"/>
+  <rect x="124" y="232" width="96" height="8" rx="4" fill="#000000"/>
+  <rect x="124" y="252" width="72" height="8" rx="4" fill="#000000"/>
+  <rect x="124" y="272" width="84" height="8" rx="4" fill="#000000"/>
+  <!-- the coin going in -->
+  <circle cx="172" cy="112" r="38" fill="#ffffff" stroke="#000000" stroke-width="16"/>
+  <rect x="166" y="88" width="12" height="48" rx="6" fill="#000000"/>
+  <!-- coins coming out, and stacking higher on the right: money making money -->
+  <circle cx="150" cy="404" r="30" fill="#000000"/>
+  <circle cx="212" cy="404" r="30" fill="#000000"/>
+  <circle cx="274" cy="404" r="30" fill="#000000"/>
+  <circle cx="336" cy="404" r="30" fill="#000000"/>
+  <circle cx="398" cy="404" r="30" fill="#000000"/>
+  <circle cx="366" cy="352" r="30" fill="#000000"/>
+  <circle cx="436" cy="418" r="22" fill="#000000"/>
+  <rect x="404" y="300" width="12" height="52" fill="#000000"/>
+  <path d="M410 268 L446 316 L374 316 Z" fill="#000000"/>
+</svg>

@@ -1,9 +1,11 @@
-![The Table typing itself in, letter by letter](assets/banner.gif)
+<img src="assets/logo.svg" width="96" alt="money machine">
 
-# The Table
+![MONEY MACHINE typing itself in, letter by letter](assets/banner.gif)
 
-**A thousand skills for AI agents that do real work — everything we learned the hard way, laid out
-on one table.**
+# money machine
+
+**A thousand skills for AI agents that build money machines — pricing, payments, revenue ops, and
+the crypto rails underneath. Every one earned from something that went wrong first.**
 
 Not tips. Not prompt tricks. Procedures with the commands, the thresholds, and the check that
 proves it worked.
@@ -20,6 +22,8 @@ A database was deleted from `server/` while the writer was using the project roo
 succeeded and changed nothing. A stale `cache/` replayed deleted file paths into a fresh deploy
 log, making a new run look like an old one. A site displayed devnet numbers as if they were mainnet.
 A test passed because `all()` over an empty list is `True`.
+
+![A coin drops into the machine and the stack grows: money making money](assets/money.gif)
 
 ![A terminal running the validator: lines appear, one turns red, the run ends green](assets/terminal.gif)
 
@@ -66,15 +70,15 @@ Run it bare to check everything, or `--only slug-a,slug-b` for one batch.
 
 ## Install
 
-    git clone https://github.com/askexort/The-Table
-    cp -r The-Table/skills/* ~/.hermes/skills/     # Hermes Agent
-    cp -r The-Table/skills/* ~/.claude/skills/     # Claude Code
-    cp -r The-Table/skills/* ~/.codex/skills/      # Codex
+    git clone https://github.com/askexort/money-machine
+    cp -r money-machine/skills/* ~/.hermes/skills/     # Hermes Agent
+    cp -r money-machine/skills/* ~/.claude/skills/     # Claude Code
+    cp -r money-machine/skills/* ~/.codex/skills/      # Codex
 
 Plain markdown with YAML frontmatter. Any agent that can read a directory can use them; nothing
 here depends on a particular runtime.
 
-## What's on the table
+## What's in the machine
 
 - `agent-01` Agent self-management
 - `agent-02` Agent honesty and evidence
